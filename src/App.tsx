@@ -280,7 +280,7 @@ function App() {
         arguments: [tx.object(CHARACTER_ID), ownerCap, returnReceipt],
       });
       const result = await dAppKit.signAndExecuteTransaction({ transaction: tx });
-      showToast(`${turret.name} — ${t.success}: ${result.digest.slice(0, 16)}...`);
+      showToast(`${turret.name} — ${t.success}: ${String(result).slice(0, 16)}...`);
     } catch (e: any) {
       showToast(`${t.error}: ${e.message}`, true);
     } finally {
